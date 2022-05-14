@@ -1,5 +1,7 @@
 import {useEffect} from 'react'
 
+import Pokemon from './components/Pokemon';
+
 function App() {
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon/ditto')
@@ -10,6 +12,7 @@ function App() {
   return (
     <div>
       <h1>Pokédex</h1>
+      <Pokemon />
     </div>
   );
 }

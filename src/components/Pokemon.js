@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import './pokemon.css'
 
 const Pokemon = ({pokemonNameAndUrl}) => {
     const list = pokemonNameAndUrl
@@ -23,10 +24,17 @@ const Pokemon = ({pokemonNameAndUrl}) => {
         })
     }, [list])
 
-    let pokemons = pokemon.map(pokemon => {
-        return <li style={{listStyleType: 'none'}}>
-            <img src={pokemon.image}/><span><h1 style={{display: 'inline'}}>{pokemon.name}</h1></span>
-        </li>
+    let pokemons = pokemon.map(({id, types, name, image}) => {
+        return (
+            
+                <div className="container">
+                    <img className="image" src={image}/>
+                    <h1>{name}</h1>
+                    <h3>{id}</h3>
+                    {types.map(types => <p>{types.type.name}</p>)}
+                </div>
+            
+        ) 
     })
 
     return (

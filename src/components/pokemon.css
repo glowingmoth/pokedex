@@ -1,0 +1,16 @@
+
+* {
+    height: fit-content;
+}
+.container {
+    display: flex;
+    align-items: center;
+}
+
+li {
+    list-style-type: none;
+}
+
+p {
+    padding: 10px 10px;
+}

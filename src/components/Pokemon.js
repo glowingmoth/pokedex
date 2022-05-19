@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+
+import numberFormat from '../utils/numberFormat'
 import './pokemon.css'
 
 const Pokemon = ({pokemonNameAndUrl}) => {
@@ -16,7 +18,7 @@ const Pokemon = ({pokemonNameAndUrl}) => {
                 let name = data.name
                 let image = data.sprites.front_default
                 pokemonList.push({id, types, name, image})
-                if (pokemonList.length === 20) {
+                if (pokemonList.length === 151) {
                     setPokemon(pokemonList)
                     console.log(pokemon)
                 }
@@ -26,14 +28,14 @@ const Pokemon = ({pokemonNameAndUrl}) => {
 
     let pokemons = pokemon.map(({id, types, name, image}) => {
         return (
-            
-                <div className="container">
-                    <img className="image" src={image}/>
-                    <h1>{name}</h1>
-                    <h3>{id}</h3>
+            <div className="container">
+                <img className="image" src={image}/>
+                <h2 className="name">{name}</h2>
+                <p className="id">{`${numberFormat(id)}`}</p>
+                <div className="types">
                     {types.map(types => <p>{types.type.name}</p>)}
                 </div>
-            
+            </div>
         ) 
     })
 

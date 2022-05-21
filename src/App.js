@@ -20,8 +20,6 @@ function App() {
 
   return (
     <div>
-      <button>Backward</button>
-      <button onClick={forward}>Forward</button>
       <h1>Pokédex</h1>
       <Pokemon pokemonNameAndUrl={data} />
     </div>

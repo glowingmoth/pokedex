@@ -150,7 +150,4 @@ export const pokemonDetails = [
     {id: 149, name: "dragonite", details: "It’s a kindhearted Pokémon. If it spots a drowning person or Pokémon, Dragonite simply must help them."},
     {id: 150, name: "mewtwo", details: "Its DNA is almost the same as Mew’s. However, its size and disposition are vastly different."},
     {id: 151, name: "mew", details: "When viewed through a microscope, this Pokémon’s short, fine, delicate hair can be seen."},
-
-
-
 ]

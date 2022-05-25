@@ -1,5 +1,4 @@
-
-* {
+/* * {
     height: fit-content;
 }
 
@@ -11,14 +10,22 @@
     background-color: #F2F2F2;
 }
 
+li {
+    list-style-type: none;
+    transition-duration: 300ms;
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+}
+
+li:hover {
+    transform: translateX(10px);
+}
+
 .container {
     display: flex;
     align-items: center;
 }
 
-li {
-    list-style-type: none;
-}
 
 .name {
     font-family: "Flexo-Demi",arial,sans-serif;

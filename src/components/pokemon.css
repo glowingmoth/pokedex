@@ -1,4 +1,4 @@
-/* * {
+* {
     height: fit-content;
 }
 
@@ -40,26 +40,13 @@ p {
     padding: 10px 10px;
 }
 
-.types {
-
+.type {
+  font-family: "Flexo-Medium",arial,sans-serif;
+  font-size: 11px;
+  text-align: center;
+  margin-right: 2px;
+  float: right;
+  border-radius: 3px;
+  width: 110px;
+  height: 18px;
 }
-
-/* Pokemon Types (Generation 1)
-
-Grass	#9bcc50
-Poison	#b97fc9
-Fire		#fd7d24
-Flying 	#3dc7ef(top half) #bdb9b8(bottom half)
-Bug		#729f3f
-Water 	#4592c3
-Normal	#a4acaf
-Ground	#f7de3f(top half)	#ab9842(bottom half)
-Electric	#eed535
-Fairy		#fdb9e9
-Fighting	#d56723
-Psychic	#f366b9
-Rock		#a38c21
-Steel		#9eb7b8
-Ice		#51c4e7
-Ghost	#7b62a3
-Dragon	#53a4cf(top half) #f16e57(bottom half) */

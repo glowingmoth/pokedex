@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 import numberFormat from '../utils/numberFormat'
-import { pokemonDetails } from "../pokemonDetails"
+import { pokemonDetails } from '../pokemonDetails'
+import Type from './Type'
 
 import './pokemon.css'
 
@@ -26,7 +27,7 @@ const Pokemon = ({pokemonNameAndUrl}) => {
             })
         })
     }, [list])
-
+    console.log(pokemon)
     let pokemons = pokemon.map(({id, types, name, image}) => {
         return (
             <li key={id} className="container">
@@ -43,6 +44,7 @@ const Pokemon = ({pokemonNameAndUrl}) => {
 
     return (
         <div>
+            <Type types={'Fire'} />
             <ul>{pokemons}</ul>
         </div>
     )

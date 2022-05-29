@@ -58,5 +58,5 @@ export default function findColour(type) {
         default:
             colour = ['F3FF00'] // Yellow to stand out and help flag a bug
     }
-    return colour
+    return {background: `linear-gradient(${colour[0]} 50%, ${colour[1]} 50%)`}
 }

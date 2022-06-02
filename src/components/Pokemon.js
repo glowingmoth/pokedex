@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import numberFormat from '../utils/numberFormat'
 import { pokemonDetails } from '../pokemonDetails'
-import Type from './Type'
+import Types from './Types'
 
 import './pokemon.css'
 
@@ -22,29 +22,34 @@ const Pokemon = ({pokemonNameAndUrl}) => {
                 pokemonList.push({id, types, name, image})
                 if (pokemonList.length === 151) {
                     setPokemon(pokemonList)
-                    console.log(pokemon)
+                    // console.log(pokemon)
                 }
             })
         })
     }, [list])
-    console.log(pokemon)
-    let pokemons = pokemon.map(({id, types, name, image}) => {
+
+    let types = []
+
+    pokemon.forEach(pokemon => {
+        types.push({name: pokemon.name, type1: pokemon.types[0].type.name, type2: pokemon.types[1]?.type.name})
+    })
+
+    let pokemons = pokemon.map(({id, name, image}) => {
         return (
             <li key={id} className="container">
                 <img className="image" src={image}/>
                 <h2 className="name">{name}</h2>
                 <p className="id">{`${numberFormat(id)}`}</p>
                 <p>{pokemonDetails[id - 1].details}</p>
-                <div className="types">
-                    {types.map(types => <p>{types.type.name}</p>)}
-                </div>
+                <Types types={types} />
             </li>
         )
     })
 
+
     return (
         <div>
-            <Type types={'Fire'} />
+
             <ul>{pokemons}</ul>
         </div>
     )

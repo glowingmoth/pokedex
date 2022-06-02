@@ -40,6 +40,11 @@ p {
     padding: 10px 10px;
 }
 
+.types {
+    display: flex;
+    width: fit-content;
+}
+
 .type {
   font-family: "Flexo-Medium",arial,sans-serif;
   font-size: 11px;

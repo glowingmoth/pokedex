@@ -1,9 +1,9 @@
 import React from 'react'
-
 import findColour from '../utils/colourFinder.js'
 
-const Type = ({types}) => {
-    return <div className="type" style={findColour(types)}>{types}</div>
+const Type = ({types}) => { // At this point it's an array of either 1 or 2 strings in lower case
+
+    return <div className="type" style={findColour(types)}></div>
 }
 
 export default Type

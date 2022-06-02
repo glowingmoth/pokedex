@@ -1,15 +1,24 @@
-import React from 'react'
-import Type from './Type'
+import React from "react";
+import Type from "./Type";
 
-const Types = ({types}) => {
-    console.log(types)
-    let newTypes = types.map(pokemon => {
-        return <Type name={pokemon.name} types={[pokemon.type1, pokemon.type2]}/>
-    })
-    // This should iterate through a loop and return type components
-    return <div className='types'>
-        {newTypes}
-    </div>
-}
+const Types = ({ types }) => {
+  console.log("inside types comp", types); // Array of objects each a pokemon with name and 1 or 2 types
 
-export default Types
+  let pokemonTypes = types.map((pokemon) => {
+    return (
+      <div>
+        {pokemon.type2 ? (
+          <>
+            <Type name={pokemon.name} types={[pokemon.type1]} />
+            <Type name={pokemon.name} types={[pokemon.type2]} />
+          </>
+        ) : (
+          <Type name={pokemon.name} types={[pokemon.type1]} />
+        )}
+      </div>
+    );
+  });
+  return <div className="types">{pokemonTypes}</div>;
+};
+
+export default Types;

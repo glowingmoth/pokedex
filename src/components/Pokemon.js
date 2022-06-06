@@ -48,7 +48,7 @@ const Pokemon = ({ pokemonNameAndUrl }) => {
       </li>
     );
   });
-  
+
   return (
     <div>
       <ul>

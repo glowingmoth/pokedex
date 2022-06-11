@@ -1,76 +1,75 @@
 * {
-    height: fit-content;
+  height: fit-content;
 }
 
 .image {
-    width:200px;
-    height:200px;
-    margin: 0;
-    border-radius: 5px;
-    background-color: #F2F2F2;
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  border-radius: 5px;
+  background-color: #f2f2f2;
 }
 
 li {
-    list-style-type: none;
-    transition-duration: 300ms;
-    transition-property: transform;
-    transition-timing-function: ease-in-out;
+  list-style-type: none;
+  transition-duration: 300ms;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
 }
 
 li:hover {
-    transform: translateX(10px);
+  transform: translateX(10px);
 }
 
 .container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .thumbnail-container {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .thumbnail-details {
-    display: flex;
-    justify-content: flex-start;
-    align-items: baseline;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
 }
 
 .id {
-    padding: 0;
-    margin: 0;
-    margin-right: 10px;
-    font-family: "Flexo-Bold",arial,sans-serif;
-    color: #919191;
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+  font-family: "Flexo-Bold", arial, sans-serif;
+  color: #919191;
 }
 
 .name {
-    margin: 0;
-    font-family: "Flexo-Demi",arial,sans-serif;
+  margin: 0;
+  font-family: "Flexo-Demi", arial, sans-serif;
 }
 
-
 p {
-    padding: 10px 10px;
+  padding: 10px 10px;
 }
 
 .types {
-    margin-top: 2px;
-    display: flex;
-    width: fit-content;
+  margin-top: 2px;
+  display: flex;
+  width: fit-content;
 }
 
 .type {
-    display: flex;
-	align-items: center;
-	justify-content: center;
-    font-family: "Flexo-Medium",arial,sans-serif;
-    font-size: 11px;
-    text-align: center;
-    color: white;
-    margin-right: 2px;
-    float: right;
-     border-radius: 3px;
-    width: 99px;
-    height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Flexo-Medium", arial, sans-serif;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+  margin-right: 2px;
+  float: right;
+  border-radius: 3px;
+  width: 99px;
+  height: 18px;
 }

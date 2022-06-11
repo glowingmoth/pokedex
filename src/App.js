@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import Pokemon from './components/Pokemon';
 
 function App() {
+  console.log('App called')
   const [data, setData] = useState([])
   // ?limit=60&offset=60
   const [limit, setLimit] = useState(151)

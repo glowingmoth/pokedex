@@ -6,6 +6,7 @@ import Types from "./Types";
 import "./pokemon.css";
 
 const Pokemon = ({ pokemonNameAndUrl }) => {
+  console.log('Pokemon called')
   const list = pokemonNameAndUrl;
   const [pokemon, setPokemon] = useState([]);
 
@@ -39,12 +40,25 @@ const Pokemon = ({ pokemonNameAndUrl }) => {
   });
 
   let pokemons = pokemon.map(({ id, name, image }) => {
+    let thisTypes = []
     return (
       <li key={id} className="container">
-        <img className="image" src={image} />
-        <h2 className="name">{name}</h2>
-        <p className="id">{`${numberFormat(id)}`}</p>
-        <p>{pokemonDetails[id - 1].details}</p>
+        <div className="thumbnail-container">
+          <img className="image" src={image} />
+          <div className='thumbnail-details'>
+            <p className="id">{`${numberFormat(id)}`}</p>
+            <h2 className="name">{name}</h2>
+          </div>
+          {
+            types.forEach(pokemon => {
+              if (pokemon.name === name) {
+                thisTypes.push({name: pokemon.name, type1: pokemon.type1, type2: pokemon.type2})
+              }
+            })
+          }
+        <Types types={thisTypes}/>
+        </div>
+        {/* <p>{pokemonDetails[id - 1].details}</p> */}
       </li>
     );
   });
@@ -52,7 +66,6 @@ const Pokemon = ({ pokemonNameAndUrl }) => {
   return (
     <div>
       <ul>
-      <Types types={types} />
         {pokemons}
       </ul>
     </div>

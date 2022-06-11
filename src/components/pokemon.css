@@ -2,6 +2,10 @@
   height: fit-content;
 }
 
+.pokemon-list {
+  margin-top: 60px;
+}
+
 .image {
   width: 200px;
   height: 200px;
@@ -15,10 +19,6 @@ li {
   transition-duration: 300ms;
   transition-property: transform;
   transition-timing-function: ease-in-out;
-}
-
-li:hover {
-  transform: translateX(10px);
 }
 
 .container {

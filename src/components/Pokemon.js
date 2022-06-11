@@ -64,7 +64,7 @@ const Pokemon = ({ pokemonNameAndUrl }) => {
   });
 
   return (
-    <div>
+    <div className="pokemon-list">
       <ul>
         {pokemons}
       </ul>

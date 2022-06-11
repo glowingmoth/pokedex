@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react'
 
 import Pokemon from './components/Pokemon';
+import Pokeball from './components/Pokeball';
+import './global.css'
 
 function App() {
   console.log('App called')
@@ -16,8 +18,9 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <div className='pokedex-container'>
       <h1>Pokédex</h1>
+      <Pokeball />
       <Pokemon pokemonNameAndUrl={data} />
     </div>
   );

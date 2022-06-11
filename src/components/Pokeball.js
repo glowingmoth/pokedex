@@ -1,4 +1,5 @@
 import React from "react";
+import './pokeball.css'
 
 const Pokeball = () => {
   return (

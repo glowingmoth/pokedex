@@ -5,7 +5,6 @@ import Pokeball from './components/Pokeball';
 import './global.css'
 
 function App() {
-  console.log('App called')
   const [data, setData] = useState([])
   // ?limit=60&offset=60
   const [limit, setLimit] = useState(151)

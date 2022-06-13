@@ -6,7 +6,6 @@ import Types from "./Types";
 import "./pokemon.css";
 
 const Pokemon = ({ pokemonNameAndUrl }) => {
-  console.log('Pokemon called')
   const list = pokemonNameAndUrl;
   const [pokemon, setPokemon] = useState([]);
 

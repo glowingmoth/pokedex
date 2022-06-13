@@ -3,13 +3,13 @@ import './pokeball.css'
 
 const Pokeball = () => {
   return (
-    <div class="item">
-      <div class="ball"></div>
-      <div class="half-ball-top"></div>
-      <div class="half-ball-bottom"></div>
-      <div class="big-button"></div>
-      <div class="small-button"></div>
-      <div class="horizon"></div>
+    <div className="item">
+      <div className="ball"></div>
+      <div className="half-ball-top"></div>
+      <div className="half-ball-bottom"></div>
+      <div className="big-button"></div>
+      <div className="small-button"></div>
+      <div className="horizon"></div>
     </div>
   );
 };

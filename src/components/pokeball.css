@@ -1,0 +1,105 @@
+.item{
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom:0;
+    animation: loading 2s infinite;
+}
+
+.ball{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 2.5px solid #1d1d1b;
+  z-index: 100;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom:0;
+  position: absolute;
+}
+
+.half-ball-top{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -26px;
+  margin: auto;
+  z-index: 10;
+  background-color: #dd2120;
+  border-radius: 90px 90px 0 0;
+  width: 50px;
+  height: 25px;
+}
+
+.half-ball-bottom{
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 28px;
+  bottom:0;
+  z-index: 0;
+  position: absolute;
+  background-color: white;
+  border-radius: 0 0 90px 90px;
+  width: 50px;
+  height: 25px;
+}
+
+.horizon{
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom:0;
+  margin-top: auto;
+  border-radius: 0px;
+  width: 50px;
+  height: 10px;
+  background-color: #1d1d1b;
+  z-index: 3;
+}
+
+.big-button{
+  z-index: 14;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom:0;
+  border-radius: 50%;
+  border: 2.5px solid #1d1d1b;
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background-color: white;
+}
+
+.small-button{
+  z-index: 15;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom:0;
+  border-radius: 50%;
+  border: 1.5px solid #1d1d1b;
+  position: absolute;
+  height: 9.5px;
+  width: 9.5px;
+  background-color: white;
+}
+
+@keyframes loading {
+  0% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(-8px, 0) rotate(-18deg); }
+  33% { transform: translate(8px, 0) rotate(18deg); }
+  50% { transform: translate(-8px, 0) rotate(-12deg); }
+  60% { transform: translate(8px, 0) rotate(18deg); }
+  100% { transform: translate(0, 0) rotate(0); }
+}

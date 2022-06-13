@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react'
 
 import Pokemon from './components/Pokemon';
+import './global.css'
 
 function App() {
-  console.log('App called')
   const [data, setData] = useState([])
   // ?limit=60&offset=60
   const [limit, setLimit] = useState(151)
@@ -16,7 +16,7 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <div className='pokedex-container'>
       <h1>Pokédex</h1>
       <Pokemon pokemonNameAndUrl={data} />
     </div>

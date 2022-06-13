@@ -1,0 +1,19 @@
+* {
+  margin-top: 0;
+}
+
+.pokedex-container {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  padding-top: 20px;
+  height: 50px;
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  font-family:  "Flexo-Regular", arial, sans-serif;
+  color: #919191;
+}

@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import numberFormat from "../utils/numberFormat";
 import { pokemonDetails } from "../pokemonDetails";
 import Types from "./Types";
+import Pokeball from "./Pokeball";
 
 import "./pokemon.css";
 
 const Pokemon = ({ pokemonNameAndUrl }) => {
   const list = pokemonNameAndUrl;
   const [pokemon, setPokemon] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   let pokemonList = [];
   useEffect(() => {
@@ -22,7 +24,7 @@ const Pokemon = ({ pokemonNameAndUrl }) => {
           pokemonList.push({ id, types, name, image });
           if (pokemonList.length === 151) {
             setPokemon(pokemonList);
-            // console.log(pokemon)
+            setIsLoading(false)
           }
         });
     });
@@ -65,7 +67,7 @@ const Pokemon = ({ pokemonNameAndUrl }) => {
   return (
     <div className="pokemon-list">
       <ul>
-        {pokemons}
+        {isLoading ? <Pokeball /> : pokemons}
       </ul>
     </div>
   );

@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react'
 
 import Pokemon from './components/Pokemon';
-import Pokeball from './components/Pokeball';
 import './global.css'
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
   return (
     <div className='pokedex-container'>
       <h1>Pokédex</h1>
-      <Pokeball />
       <Pokemon pokemonNameAndUrl={data} />
     </div>
   );

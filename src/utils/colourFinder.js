@@ -39,7 +39,7 @@ export default function findColour(types) {
       case "fighting":
         colour.push("#d56723");
         break;
-      case "psychick":
+      case "psychic":
         colour.push("#f366b9");
         break;
       case "rock":

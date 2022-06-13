@@ -20,7 +20,7 @@ const Pokemon = ({ pokemonNameAndUrl }) => {
           let id = data.id;
           let types = data.types;
           let name = data.name;
-          let image = data.sprites.front_default;
+          let image = data.sprites.other['official-artwork'].front_default;
           pokemonList.push({ id, types, name, image });
           if (pokemonList.length === 151) {
             setPokemon(pokemonList);

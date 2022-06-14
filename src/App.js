@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 
 import Pokemon from './components/Pokemon';
 import './global.css'
@@ -18,7 +19,7 @@ function App() {
   return (
     <div className='pokedex-container'>
       <h1>Pokédex</h1>
-      <Pokemon pokemonNameAndUrl={data} />
+      <Link to='/test'>{<Pokemon pokemonNameAndUrl={data} />}</Link>
     </div>
   );
 }

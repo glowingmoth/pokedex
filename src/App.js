@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Pokemon from './components/Pokemon';
+import PokemonInfo from './components/PokemonInfo';
+import PokemonThumbnail from './components/PokemonThumbnail';
 import './global.css'
 
 function App() {
@@ -17,10 +18,15 @@ function App() {
   }, [])
 
   return (
-    <div className='pokedex-container'>
-      <h1>Pokédex</h1>
-      <Link to='/test'>{<Pokemon pokemonNameAndUrl={data} />}</Link>
-    </div>
+    <BrowserRouter>
+      <div className='pokedex-container'>
+        <h1>Pokédex</h1>
+        <Routes>
+          <Route path='/' element={<PokemonThumbnail pokemonNameAndUrl={data} />} />
+          <Route path='/:pokemonName' element={<PokemonInfo />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

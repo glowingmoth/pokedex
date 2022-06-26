@@ -31,6 +31,11 @@ li {
   align-items: center;
 }
 
+.react-router-link {
+  color: black;
+  text-decoration: none;
+}
+
 .thumbnail-container {
   margin-bottom: 40px;
 }

@@ -69,8 +69,8 @@ export default function findColour(types) {
         break;
       case "undefined":
         break;
+      default:
     }
-    // console.log('My colour array', colour)
   });
 
   if (colour.length > 1) {

@@ -6,7 +6,7 @@ const Types = ({ types }) => {
 
   let pokemonTypes = types.map((pokemon) => {
     return (
-      <div className="types">
+      <div key={pokemon.name} className="types">
         {pokemon.type2 ? (
           <>
             <Type name={pokemon.name} types={[pokemon.type1]} />

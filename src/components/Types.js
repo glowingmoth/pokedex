@@ -1,12 +1,13 @@
 import React from "react";
 import Type from "./Type";
+import "./pokemon.css"
 
 const Types = ({ types }) => {
   // console.log("inside types comp", types); // Array of objects each a pokemon with name and 1 or 2 types
 
   let pokemonTypes = types.map((pokemon) => {
     return (
-      <div key={pokemon.name} className="types">
+      <div key={pokemon.name}>
         {pokemon.type2 ? (
           <>
             <Type name={pokemon.name} types={[pokemon.type1]} />

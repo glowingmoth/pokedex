@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react'
 
 import Pokemon from './components/Pokemon';
+
+
 import './global.css'
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
       <h1>Pokédex</h1>
       <Pokemon pokemonNameAndUrl={data} />
       <button style={{marginTop: '100px'}} onClick={loadMore}>Load More</button>
+      
     </div>
   );
 }

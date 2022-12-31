@@ -3,6 +3,7 @@ import numberFormat from "../utils/numberFormat";
 import { pokemonDetails } from "../pokemonDetails";
 import Types from "./Types";
 import Pokeball from "./Pokeball";
+import Pagination from './Pagination'
 
 import "./pokemon.css";
 
@@ -88,6 +89,7 @@ const Pokemon = ({ pokemonNameAndUrl }) => {
       <ul>
         {isLoading ? <Pokeball /> : pokemons}
       </ul>
+      <Pagination />
     </div>
   );
 };

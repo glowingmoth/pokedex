@@ -7,10 +7,8 @@
 }
 
 .image {
-  width: 150px;
-  height: 150px;
+  height: 130px;
   margin: 0;
-  border-radius: 5px;
   background-color: #f2f2f2;
 }
 
@@ -28,10 +26,13 @@ li {
 .container {
   display: flex;
   align-items: flex-end;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #f2f2f2;
 }
 
 .thumbnail-container {
-  height: 150px;
+  height: 130px;
 }
 
 .thumbnail-details {
@@ -58,7 +59,7 @@ p {
 }
 
 .details {
-  margin-left: 10px;
+  margin: 10px;
 }
 
 .types {

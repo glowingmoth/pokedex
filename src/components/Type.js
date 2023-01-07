@@ -1,14 +1,14 @@
-import React from "react";
-import findColour from "../utils/colourFinder.js";
+import React, {useEffect, useState} from "react";
+import findColour from "../utils/findColour.js";
 
-const Type = ({ types }) => {
-  // At this point it's an array of either 1 or 2 strings in lower case
-// console.log('inside type', types)
-  return (
-    <div className="type" style={findColour(types)}>
-      {types[0]} {/* This is actually the type name*/}
-    </div>
-  );
+const Type = ({ name }) => {
+  const [typeName, setTypeName] = useState(null)
+
+  useEffect(() => {
+    setTypeName(name)
+  }, [name])
+
+  return ( <div className="type" style={findColour(name)}>{typeName}</div> );
 };
 
 export default Type;

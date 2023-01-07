@@ -3,48 +3,49 @@ import numberFormat from "../utils/numberFormat";
 import { pokemonDetails } from "../pokemonDetails";
 import Types from "./Types";
 import Pokeball from "./Pokeball";
-import Pagination from './Pagination'
+import Pagination from '@mui/material/Pagination';
 
 import "./pokemon.css";
 
 const Pokemon = ({ pokemonNameAndUrl }) => {
-  console.log('props in order? ', pokemonNameAndUrl) // Yes in order!
-  const list = pokemonNameAndUrl;
   const [pokemon, setPokemon] = useState([]);
   const [isLoading, setIsLoading] = useState(true)
 
-    console.log('list', list) // Yes in order!
-  let pokemonList = [];
   useEffect(() => {
-    console.log('inside useeffect', list)
-    list?.forEach((item) => {
+    let tempList = [];
+    pokemonNameAndUrl?.forEach((item) => { // These are all iterated in the correct order
       fetch(item.url)
-        .then((response) => response.json())
-        .then((data) => {
-          let id = data.id;
-          let types = data.types;
-          let name = data.name;
-          let image = data.sprites.other['official-artwork'].front_default;
-          console.log({ id, types, name, image })
-          pokemonList.push({ id, types, name, image });
-          for (let i = 0; i < pokemonList.length; i++) {
-            if (pokemonList[i] > pokemonList[i + 1]) {
-              let tempA = pokemonList[i]
-              let tempB = pokemonList[i + 1]
-              pokemonList[i] = tempB
-              pokemonList[i + 1] = tempA
+        .then((response) => response.json()) // The responses are NOT in the correct order
+        .then((data) => { // id's are coming through in any order
+          tempList.push(
+            {
+              id: data.id,
+              types: data.types,
+              name: data.name,
+              image: data.sprites.other['official-artwork'].front_default
             }
-          }
+          );
 
-          if (pokemonList.length === 5) {
-            setPokemon(pokemonList);
+          if (tempList.length === 5) {
+            setPokemon(tempList)
             setIsLoading(false)
           }
         });
     });
-  }, [list]);
+  }, [pokemonNameAndUrl]);
 
   let types = [];
+
+  if (pokemon.length > 0) {
+    for (let i = 0; i < pokemon.length; i++) {
+      // if (pokemon[i].id < pokemon[i + 1].id) {
+      //   let tempA = pokemon[i]
+      //   let tempB = pokemon[i + 1]
+      //   pokemon[i] = tempB
+      //   pokemon[i + 1] = tempA
+      // }
+    }
+  }
 
   pokemon.forEach((pokemon) => {
     types.push({
@@ -53,8 +54,6 @@ const Pokemon = ({ pokemonNameAndUrl }) => {
       type2: pokemon.types[1]?.type.name,
     });
   });
-
-  console.log('pokemon before becoming pokemons', pokemon) // Not in order
 
   let pokemons = pokemon.map(({ id, name, image }) => {
     let thisTypes = []
@@ -69,7 +68,7 @@ const Pokemon = ({ pokemonNameAndUrl }) => {
               <h2 className="name">{name}</h2>
             </div>
             {
-              types.forEach(pokemon => {
+              types.forEach(pokemon => { // This is where I build the types array for easier processing
                 if (pokemon.name === name) {
                   thisTypes.push({name: pokemon.name, type1: pokemon.type1, type2: pokemon.type2})
                 }
@@ -82,14 +81,12 @@ const Pokemon = ({ pokemonNameAndUrl }) => {
     );
   });
 
-  console.log('pokemons in Pokemon', pokemons)
-
   return (
     <div className="pokemon-list">
       <ul>
         {isLoading ? <Pokeball /> : pokemons}
       </ul>
-      <Pagination />
+        <Pagination count={10} variant="outlined" shape="rounded"/>
     </div>
   );
 };

@@ -1,13 +1,9 @@
-// The first element in the array is always the top colour on types that are split horizontally
-// A pokemon can have more than 1 type, some have 2
+import { color } from "@mui/system";
 
-export default function findColour(types) {
-  // this is an array or 1 or 2 strings
-  // console.log(types) // Array of types 1 or 2 strings
+export default function findColour(name) {
   let colour = [];
   let text = '';
-  types.forEach((type) => {
-    switch (type) {
+    switch (name) {
       case "grass": // Text - black
         colour.push("#9bcc50");
         text = 'black'
@@ -67,11 +63,13 @@ export default function findColour(types) {
       case "dragon":
         colour.push("#53a4cf", "#f16e57");
         break;
+      case "dark":
+        colour.push("#707070")
+        break;
       case "undefined":
         break;
+      default:
     }
-    // console.log('My colour array', colour)
-  });
 
   if (colour.length > 1) {
     return {

@@ -1,24 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Type from "./Type";
+import "./pokemon.css"
 
-const Types = ({ types }) => {
-  // console.log("inside types comp", types); // Array of objects each a pokemon with name and 1 or 2 types
+const Types = ({ poke }) => {
+  const [pokemonTypes, setPokemonTypes] = useState([])
 
-  let pokemonTypes = types.map((pokemon) => {
+  useEffect(() => {
+    setPokemonTypes(poke.types)
+  }, [poke])
+
     return (
-      <div className="types">
-        {pokemon.type2 ? (
+      <div>
+        {pokemonTypes.length > 0 && pokemonTypes.length > 1 ? (
           <>
-            <Type name={pokemon.name} types={[pokemon.type1]} />
-            <Type name={pokemon.name} types={[pokemon.type2]} />
+            <Type name={pokemonTypes[0]?.type.name} />
+            <Type name={pokemonTypes[1]?.type.name} />
           </>
         ) : (
-          <Type name={pokemon.name} types={[pokemon.type1]} />
+          <Type name={pokemonTypes[0]?.type.name} />
         )}
       </div>
     );
-  });
-  return <div className="types">{pokemonTypes}</div>;
 };
 
 export default Types;

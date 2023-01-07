@@ -3,15 +3,12 @@
 }
 
 .pokemon-list {
-  margin-top: 70px;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .image {
-  width: 300px;
-  height: 300px;
+  height: 130px;
   margin: 0;
-  border-radius: 5px;
   background-color: #f2f2f2;
 }
 
@@ -28,11 +25,14 @@ li {
 
 .container {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #f2f2f2;
 }
 
 .thumbnail-container {
-  margin-bottom: 40px;
+  height: 130px;
 }
 
 .thumbnail-details {
@@ -58,13 +58,18 @@ p {
   padding: 10px 10px;
 }
 
+.details {
+  margin: 10px;
+}
+
 .types {
   margin-top: 2px;
-  display: flex;
+  /* display: flex; */
   width: fit-content;
 }
 
 .type {
+  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,8 +78,7 @@ p {
   text-align: center;
   color: white;
   margin-right: 2px;
-  float: right;
   border-radius: 3px;
-  width: 99px;
-  height: 18px;
+  width: 200px;
+  height: 20px;
 }

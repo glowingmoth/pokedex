@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react'
 
-// import Pokemon from './components/Pokemon';
-import Test from './Test';
+import Pokemon from './components/Pokemon';
 import './global.css'
 
 function App() {
@@ -14,15 +13,14 @@ function App() {
     fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)
       .then(response => response.json())
       .then(data => setData(data.results))
-  }, [limit]) // CURRENTLY WORKING ON THE LOAD MORE FEATURE
+  }, [limit])
 
   return (
     <div className='pokedex-container'>
         <h1>Pokédex</h1>
       <div className="pokemon-list">
-        {/* <Pokemon pokemonNameAndUrl={data} /> */}
         {data.map((data, index) => {
-          return <Test key={index} nameAndUrl={data} />
+          return <Pokemon key={index} nameAndUrl={data} />
         })}
       </div>
     </div>

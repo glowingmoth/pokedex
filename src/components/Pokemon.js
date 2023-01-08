@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
 
-import numberFormat from "../utils/numberFormat";
+import numberFormat from "../helpers/numberFormat";
 import "./pokemon.css";
 import Types from './Types'
+// import {pokemonDetails} from '../pokemonDetails'
 
 const Pokemon = ({ nameAndUrl }) => {
   const [pokemon, setPokemon] = useState([]);
@@ -29,7 +30,7 @@ const Pokemon = ({ nameAndUrl }) => {
             </div>
             {pokemon.length < 1 ? "Loading" : <Types poke={pokemon}/> }
           </div>
-        {/* <p>{pokemonDetails[id - 1].details}</p> */}
+        {/* <p>{pokemonDetails[pokemon.id - 1]?.details}</p> */} {/* TODO: Move to a details page */}
       </li>
     </ul>
     </div>

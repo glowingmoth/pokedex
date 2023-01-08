@@ -1,5 +1,3 @@
-import { color } from "@mui/system";
-
 export default function findColour(name) {
   let colour = [];
   let text = '';

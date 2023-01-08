@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import findColour from "../utils/findColour.js";
+import findColour from "../helpers/findColour.js";
 
 const Type = ({ name }) => {
   const [typeName, setTypeName] = useState(null)

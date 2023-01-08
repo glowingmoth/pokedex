@@ -6,8 +6,8 @@ import './global.css'
 function App() {
   const [data, setData] = useState([])
   // ?limit=60&offset=60
-  const [limit, setLimit] = useState(200)
-  const [offset, setOffset] = useState(151)
+  const [limit, setLimit] = useState(5)
+  const [offset, setOffset] = useState(0)
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`)

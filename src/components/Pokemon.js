@@ -6,7 +6,7 @@ import Types from './Types'
 import useFetch from '../helpers/useFetch';
 // import {pokemonDetails} from '../pokemonDetails'
 
-const Pokemon = ({ nameAndUrl }) => {
+export default function Pokemon ({ nameAndUrl }) {
   const [pokemon, setPokemon] = useState([]);
   const {data} = useFetch(nameAndUrl.url)
 
@@ -36,5 +36,3 @@ const Pokemon = ({ nameAndUrl }) => {
     </div>
   );
 };
-
-export default Pokemon;

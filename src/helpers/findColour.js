@@ -1,4 +1,4 @@
-export default function findColour(name) {
+export default function findColour (name) {
   let colour = [];
   let text = '';
     switch (name) {

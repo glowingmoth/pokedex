@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Type from "./Type";
 import "./pokemon.css"
 
-const Types = ({ poke }) => {
+export default function Types ({ poke }) {
   const [pokemonTypes, setPokemonTypes] = useState([])
 
   useEffect(() => {
@@ -22,5 +22,3 @@ const Types = ({ poke }) => {
       </div>
     );
 };
-
-export default Types;

@@ -1,7 +1,6 @@
-import { compose } from '@mui/system'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-const useFetch = (url) => {
+export default function useFetch (url) {
   const [data, setData] = useState([]) // Need some conditional rendering that works when this is default to null
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -17,6 +16,3 @@ const useFetch = (url) => {
 
   return {data, loading, error}
 }
-
-
-export default useFetch

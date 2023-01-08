@@ -1,4 +1,4 @@
-export default function numberFormat(id) {
+export default function numberFormat (id) {
   if (id < 10) {
     return `#00${id}`;
   } else if (id < 100) {

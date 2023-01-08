@@ -3,16 +3,16 @@ import React, {useEffect, useState} from 'react'
 import numberFormat from "../helpers/numberFormat";
 import "./pokemon.css";
 import Types from './Types'
+import useFetch from '../helpers/useFetch';
 // import {pokemonDetails} from '../pokemonDetails'
 
-const Pokemon = ({ nameAndUrl }) => {
+export default function Pokemon ({ nameAndUrl }) {
   const [pokemon, setPokemon] = useState([]);
+  const {data} = useFetch(nameAndUrl.url)
 
   useEffect(() => {
-    fetch(nameAndUrl.url)
-    .then(response => response.json())
-    .then(data => setPokemon(data))
-    }, [nameAndUrl])
+    setPokemon(data)
+    }, [data])
 
   return ( <div>
     <ul>
@@ -29,12 +29,10 @@ const Pokemon = ({ nameAndUrl }) => {
               <h2 className="name">{pokemon.name}</h2>
             </div>
             {pokemon.length < 1 ? "Loading" : <Types poke={pokemon}/> }
-          </div>
+        </div>
         {/* <p>{pokemonDetails[pokemon.id - 1]?.details}</p> */} {/* TODO: Move to a details page */}
       </li>
     </ul>
     </div>
   );
 };
-
-export default Pokemon;

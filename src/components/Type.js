@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import findColour from "../helpers/findColour.js";
 
-const Type = ({ name }) => {
+export default function Type ({ name }) {
   const [typeName, setTypeName] = useState(null)
 
   useEffect(() => {
@@ -10,5 +10,3 @@ const Type = ({ name }) => {
 
   return ( <div className="type" style={findColour(name)}>{typeName}</div> );
 };
-
-export default Type;

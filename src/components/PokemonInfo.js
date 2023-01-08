@@ -7,7 +7,7 @@ import Types from "./Types";
 import "./pokemon-info.css";
 
 
-const PokemonInfo = ({ pokemonNameAndUrl }) => {
+export default function PokemonInfo ({ pokemonNameAndUrl }) {
   const list = pokemonNameAndUrl;
   const [pokemon, setPokemon] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -75,5 +75,3 @@ const PokemonInfo = ({ pokemonNameAndUrl }) => {
     </div>
   );
 };
-
-export default PokemonInfo;

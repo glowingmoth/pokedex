@@ -1,7 +1,7 @@
 import React from "react";
 import './pokeball.css'
 
-const Pokeball = () => {
+export default function Pokeball () {
   return (
     <div className="item">
       <div className="ball"></div>
@@ -13,5 +13,3 @@ const Pokeball = () => {
     </div>
   );
 };
-
-export default Pokeball;

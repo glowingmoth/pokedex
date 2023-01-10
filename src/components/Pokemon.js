@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
 
 import numberFormat from "../helpers/numberFormat";
 import "./pokemon.css";
@@ -12,10 +13,11 @@ export default function Pokemon ({ nameAndUrl }) {
 
   useEffect(() => {
     setPokemon(data)
-    }, [data])
+  }, [data])
 
   return ( <div>
     <ul>
+      <Link to={`test1/${pokemon.id}`}>
       <li className="container">
         <div className="thumbnail-container">
           <img
@@ -32,6 +34,7 @@ export default function Pokemon ({ nameAndUrl }) {
         </div>
         {/* <p>{pokemonDetails[pokemon.id - 1]?.details}</p> */} {/* TODO: Move to a details page */}
       </li>
+      </Link>
     </ul>
     </div>
   );

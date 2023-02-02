@@ -1,20 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import App from "./App";
-import Test1 from "./Test1";
-import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import Pokemon, {loader as pokemonLoader} from './components/Pokemon'
+import PokemonInfo from "./components/PokemonInfo";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App/>,
   },
   {
-    path: "test1/:id",
-    loader: ({params}) => params.id,
-    element: <Test1 />,
+    path: "/:id",
+    element: <PokemonInfo />,
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={router} />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <RouterProvider router={router} />
+);

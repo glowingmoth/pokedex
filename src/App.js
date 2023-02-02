@@ -1,14 +1,12 @@
 import {useState, useEffect} from 'react'
-
-import Pokemon from './components/Pokemon';
+import PokemonInfo from './components/PokemonInfo'
+import Pokemon from './components/Pokemon'
 import './global.css'
 import useFetch from './helpers/useFetch'
-import { Outlet, Link } from 'react-router-dom'
 
 
 export default function App () {
   const [pokemonMetaData, setPokemonMetaData] = useState([])
-
   // ?limit=60&offset=60
   const [limit, setLimit] = useState(5)
   const [offset, setOffset] = useState(0)
@@ -26,8 +24,6 @@ export default function App () {
           return <Pokemon key={index} nameAndUrl={data} />
         })}
       </div>
-      <Outlet />
-      <Link to={`test1`}>Test1 Link</Link>
     </div>
   );
 }

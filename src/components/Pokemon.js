@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
-
 import numberFormat from "../helpers/numberFormat";
 import "./pokemon.css";
 import Types from './Types'
 import useFetch from '../helpers/useFetch';
-// import {pokemonDetails} from '../pokemonDetails'
+
 
 export default function Pokemon ({ nameAndUrl }) {
   const [pokemon, setPokemon] = useState([]);
@@ -17,7 +16,7 @@ export default function Pokemon ({ nameAndUrl }) {
 
   return ( <div>
     <ul>
-      <Link to={`test1/${pokemon.id}`}>
+      <Link to={`/${pokemon.id}`}>
       <li className="container">
         <div className="thumbnail-container">
           <img
@@ -32,7 +31,6 @@ export default function Pokemon ({ nameAndUrl }) {
             </div>
             {pokemon.length < 1 ? "Loading" : <Types poke={pokemon}/> }
         </div>
-        {/* <p>{pokemonDetails[pokemon.id - 1]?.details}</p> */} {/* TODO: Move to a details page */}
       </li>
       </Link>
     </ul>
